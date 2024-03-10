@@ -12,6 +12,6 @@ const category = mongoose.Schema({
             }
         ],
         default: []
-    }
+    },
 })
 module.exports = mongoose.model('category', category);

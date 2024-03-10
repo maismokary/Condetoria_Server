@@ -1,9 +1,12 @@
 const express =require('express');
-const { addProduct,getProduct } = require('../controllers/productControllers');
+const { addProduct,getProduct,deleteProduct, addProductToCategory, removeProductFromCategory, updateProudct } = require('../controllers/productControllers');
+const checkAuth = require('../controllers/middleware/checkAuth');
 const productRouter = express.Router();
+productRouter.post('/addProduct',addProduct,)
+productRouter.post('/addProductToCategory',addProductToCategory)
+productRouter.get('/getProduct',getProduct,checkAuth),
+productRouter.delete('/tdeleteProduct',deleteProduct,),
+productRouter.post('/updateProudct', updateProudct,checkAuth),
 
-
-productRouter.post('/addProduct',addProduct)
-productRouter.get('/getProduct',getProduct)
 
 module.exports = productRouter;
